@@ -15,6 +15,6 @@ For usage in https://github.com/tierpod/prometheus-rpm fork:
 make build7
 docker tag lest/centos-rpm-builder:7 ghcr.io/lest/centos-rpm-builder:7
 
-make build-ol10
+make build-oracle10
 docker tag lest/centos-rpm-builder:oracle10 ghcr.io/lest/centos-rpm-builder:oracle10
 ```
