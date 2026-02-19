@@ -1,7 +1,10 @@
 FROM centos:7
 MAINTAINER Sergey Nartimov <just.lest@gmail.com>
 
-RUN yum install -y yum-utils rpm-build rpm-sign redhat-rpm-config rpmdevtools createrepo && \
+RUN sed -i s/mirror.centos.org/vault.centos.org/g /etc/yum.repos.d/CentOS* && \
+  sed -i s/^#.*baseurl=http/baseurl=http/g /etc/yum.repos.d/CentOS* && \
+  sed -i s/^mirrorlist=http/#mirrorlist=http/g /etc/yum.repos.d/CentOS* && \
+  yum install -y yum-utils rpm-build rpm-sign redhat-rpm-config rpmdevtools createrepo && \
   yum clean all
 RUN echo '%_topdir /rpmbuild' > /root/.rpmmacros
 
