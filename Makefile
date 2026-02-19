@@ -1,3 +1,9 @@
+build-oracle10:
+	docker build --pull --force-rm \
+		-f Dockerfile.oracle10 \
+		-t lest/centos-rpm-builder:oracle10 \
+		.
+
 build9:
 	docker build --pull --force-rm \
 		-f Dockerfile.stream9 \
